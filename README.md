@@ -20,4 +20,9 @@ Used Plugins:
 * [yajs](https://www.github.com/othree/yajs.vim)
 * [vim-js-indent](https://www.github.com/gavocanov/vim-js-indent)
 
+## TMUX
+NOTE: I'am using the tmux-powerline plugin from the fedora repo!.
 
+First install [tpm](https://www.github.com/tmux-plugins/tpm) as TMUX plugin manager.
+
+* [sidebar](https://www.github.com/tmux-plugins/tmux-sidebar)
