@@ -2,6 +2,7 @@
 
 ## VIM
 First install [vundle](https://www.github.com/VundleVim/Vundle.vim) as VIM plugin manager
+
 Used Plugins:
 
 * [tagbar](https://www.github.com/majutsushi/tagbar)
