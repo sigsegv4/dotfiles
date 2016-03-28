@@ -1,7 +1,7 @@
 # DOTFILES
 
 ## VIM
-First install [vundle](www.github.com/VundleVim/Vundle.vim) as VIM plugin manager
+First install [vundle](https://www.github.com/VundleVim/Vundle.vim) as VIM plugin manager
 Used Plugins:
 
 *[tagbar]
