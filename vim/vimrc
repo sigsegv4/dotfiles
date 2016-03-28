@@ -1,0 +1,112 @@
+"================================================== 
+".vimrc file <sigsegv4> [2016]
+"Using Vundle as Plug in manager
+"================================================== 
+
+"==================================================
+"Change log:
+"[P-Change] Switch vim-javascript with yajs and
+"	   vim-js-intend since vim-javascipt has 
+"	   no es6 support
+"==================================================
+
+"================================================== 
+"Vundle Settings Start
+"================================================== 
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+"================================================== 
+"General VIM Plug ins
+"Plug ins that can be used in different file types
+"================================================== 
+
+Plugin 'majutsushi/tagbar' 
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+"================================================== 
+"Javascript
+"Plug ins that are used for Javascript
+"================================================== 
+Plugin 'othree/yajs.vim'
+Plugin 'gavocanov/vim-js-indent'
+
+call vundle#end()
+filetype plugin indent on
+"================================================== 
+"VUNDLE END 
+"================================================== 
+
+"================================================== 
+"Default VIM Settings 
+"NOTE: Zenburn is a external theme
+"================================================== 
+colors zenburn
+set number
+set laststatus=2
+set ttimeoutlen=50
+set spell spelllang=en_us
+
+"================================================== 
+"NERDTree Settings 
+"================================================== 
+map <C-n> :NERDTreeToggle<CR>
+map <F9> :TagbarToggle <CR>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+"================================================== 
+"Airline Settings
+"Airline needs the Powerline fonts!
+"================================================== 
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+"================================================== 
+"Syntastic Settings
+"================================================== 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+noremap <F2> :lnext <CR>
+noremap <F3> :lprevious <CR>
+
+"================================================== 
+"Autoformat Settigns
+"================================================== 
+noremap <F6> :Autoformat<CR>
+let g:formatters_javascript = ["jscs", "jsbeautify_javascript"]
+
+"================================================== 
+"UtilSnips Settings
+"================================================== 
+let g:UltiSnipsExpandTrigger="<C-t>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
+
+"================================================== 
+"Tagbar Settings
+"================================================== 
+nmap <F8> :TagbarToggle<CR>
