@@ -36,6 +36,7 @@ Plugin 'bling/vim-airline'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'KabbAmine/vCoolor.vim'
 
 "================================================== 
 "Javascript
@@ -43,6 +44,13 @@ Plugin 'honza/vim-snippets'
 "================================================== 
 Plugin 'othree/yajs.vim'
 Plugin 'gavocanov/vim-js-indent'
+
+"==================================================
+"Html / CSS
+"Plug ins that are used for html/ css
+"==================================================
+Plugin 'mattn/emmet-vim'
+Plugin 'ap/vim-css-color'
 
 call vundle#end()
 filetype plugin indent on
@@ -64,7 +72,6 @@ set spell spelllang=en_us
 "NERDTree Settings 
 "================================================== 
 map <C-n> :NERDTreeToggle<CR>
-map <F9> :TagbarToggle <CR>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -110,3 +117,26 @@ let g:UltiSnipsEditSplit="vertical"
 "Tagbar Settings
 "================================================== 
 nmap <F8> :TagbarToggle<CR>
+
+"==================================================
+"emmet Settings
+"==================================================
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+"==================================================
+"Detect Markdown files correctly
+"==================================================
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+"==================================================
+"Toggle Paste Mode on and Off
+"==================================================
+nnoremap <F12> :set invpaste paste?<CR>
+set pastetoggle=<F12>
+set showmode
+"==================================================
+"Toggle Color Picker
+"==================================================
+let g:vcoolor_disable_mappings = 1
+let g:vcoolor_map= "<F9>"
